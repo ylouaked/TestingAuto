@@ -24,5 +24,14 @@ export async function register (page,psw,email,user){
   
 
 }
+import { login } from './helpers/login';
+
+test('Login avec mot de passe incorrect', async ({ page }) => {
+    const email = 'email1@example.com';
+    const psw = 'wrongpassword';
+
+    await login(page, email, psw);
+    await expect(page.locator('.message')).toHaveText('Email ou mot de passe incorrect.');
+});
 
 
