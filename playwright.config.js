@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 import { defineConfig, devices } from '@playwright/test';
 
 /**
@@ -13,7 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: './SELA',
   timeout: 70 * 1000, // 70 secondes pour tout le test
   expect : {
   timeout: 15000,
@@ -32,14 +32,19 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
-
+  
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     actionTimeout: 10000, // Délai maximum de 10 secondes pour chaque action  
     // S'applique uniquement aux actions spécifiques (clic, saisie, navigation, etc.)
     headless: false, // Désactive le mode headless pour voir les fenêtres du navigateur
+
+    
+
+   
   },
 
+ 
   /* Configure projects for major browsers */
   projects: [
     {

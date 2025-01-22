@@ -3,7 +3,6 @@ import { loginData } from '../data.js';
 
 export async function login(page, data) {
     await page.goto('http://localhost:4200/login');
-   
         await expect(page.locator('button[type="submit"]')).toBeDisabled();
         await page.fill('#email', data.email);
         await expect(page.locator('button[type="submit"]')).toBeDisabled();
