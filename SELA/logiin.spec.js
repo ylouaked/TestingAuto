@@ -1,11 +1,10 @@
-const { test } = require('@playwright/test')
-
-import { login } from './helperS/logiin.js';
+import { test } from '@playwright/test'; // Utilisez "import" au lieu de "require"
+import { login } from './help/log.js';
 import { loginData } from './datas.js';
 
 test.use({
-    ignoreHTTPSErrors: true
-  }); 
+    ignoreHTTPSErrors: true, 
+});
 
 // test('Login avec des informations valides', async ({ page }) => {
 //   await page.goto('https://10.234.34.115/index/login');
@@ -26,6 +25,18 @@ test('Login avec des informations valides', async ({ page }) => {
 });
 
 
+
+test('Login avec un username invalide', async ({ page }) => {
+  await login(page, loginData.invalid_user);
+});
+
+test('Login avec un mot de passe invalide', async ({ page }) => {
+  await login(page, loginData.invalid_psw);
+});
+
+test('Login avec un username et un mot de passe invalides', async ({ page }) => {
+  await login(page, loginData.invalid_data);
+})
 
 
 
