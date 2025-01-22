@@ -1,15 +1,19 @@
 const { test, expect } = require('@playwright/test');
 
+import { login } from './helpers/login';
+import { loginData } from './data.js';
 
-import { registerData } from './data';
-import { register } from './helpers/register';
-
-
-
-
-
-test('Login avec mot de passe correct', async ({ page }) => {
-   
-    await register(page,registerData.invalid_data);
-    
+test('Login avec des informations valides', async ({ page }) => {
+    await login(page, loginData.valid_user);
 });
+
+test('Login avec un email invalide', async ({ page }) => {
+    await login(page, loginData.invalid_email);
+});
+
+test('Login avec un mot de passe invalide', async ({ page }) => {
+    await login(page, loginData.invalid_password);
+});
+
+
+

@@ -1,26 +1,41 @@
 export const registerData = {
-
- scenario1:{ 
+    short_password:{ 
     user: 'UtilisateurTest',
-    email: 'testtttttt',
-    psw: '123456',
-    scenario: 'valid_data', 
+    email: 'abcd@yopmail.com',
+    psw: '123',
+     },
     
-},
-    
-    invalid_data:{
+    invalid_email:{
         user: 'UtilisateurTest',
-        email: 'email1@example.com',
+        email: 'email1',
         psw: '123456',
-        scenario: 'invalid_email', },
+       },
 
-
-        scenario3:{
-        
+        email_already_used:{
             user: 'UtilisateurTest',
-            email: 'email1@example.com',
+            email: 'condor@yopmail.com',
             psw: '123456',
-            scenario: 'email_already_used'
+        },
+
+        valid_data:{
+            user:'UtilisateurTest',
+            email:'yopmail@yopmail.com',
+            psw:'123456' ,
         }
 
     }
+    export const loginData = {
+        valid_user: {
+            email: 'condor@yopmail.com',
+            psw: '1234567'
+        },
+        invalid_email: {
+            email: 'efg@yopmail.com',
+            psw: '1234563'
+        },
+        invalid_password: {
+            email: 'condor@yopmail.com',
+            psw: '0123456'
+        }
+    };
+    
