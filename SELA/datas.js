@@ -15,6 +15,13 @@ export const loginData ={
     invalid_data: {
        username: '15',  
        password:  ['1', '3', '1', '2', '1', '2'] 
+     },
+     short_psw:{
+      username: '15',  
+       password:  ['1', '3', '1', '2', '1'] 
+     },
+     empty_user:{
+      username: '',  
      }
    
 }

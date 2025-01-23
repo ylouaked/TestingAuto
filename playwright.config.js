@@ -38,9 +38,6 @@ export default defineConfig({
     actionTimeout: 10000, // Délai maximum de 10 secondes pour chaque action  
     // S'applique uniquement aux actions spécifiques (clic, saisie, navigation, etc.)
     headless: false, // Désactive le mode headless pour voir les fenêtres du navigateur
-
-    
-
    
   },
 

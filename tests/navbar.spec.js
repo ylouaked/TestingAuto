@@ -7,7 +7,6 @@ test.beforeEach(async ({ page }) => {
   });
 
 test('Les éléments du navbar', async ({ page }) => {
-     
     await expect(page.locator('.navbar-logo img')).toBeVisible();
     await expect(page.locator('a:has-text("Accueil")')).toBeVisible();
     await expect(page.locator('a:has-text("Profile")')).toBeVisible();

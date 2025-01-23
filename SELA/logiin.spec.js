@@ -1,4 +1,4 @@
-import { test } from '@playwright/test'; // Utilisez "import" au lieu de "require"
+import { test } from '@playwright/test'; 
 import { login } from './help/log.js';
 import { loginData } from './datas.js';
 
@@ -38,7 +38,13 @@ test('Login avec un username et un mot de passe invalides', async ({ page }) => 
   await login(page, loginData.invalid_data);
 })
 
+test('Login avec un mot de passe court', async ({ page }) => {
+  await login(page, loginData.short_psw);
+})
 
+test('Login avec champ vide' , async ({ page }) => {
+  await login(page, loginData.empty_user);
+        })
 
 
 
